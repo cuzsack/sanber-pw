@@ -8,5 +8,6 @@ test.describe('Login', () => {
         await login (page, (config.usernameAdmin), (config.passwordAdmin));
         await expect (page.getByRole('heading', { name: 'kasirAja' })).toBeVisible();
         await expect(page).toHaveURL(/dashboard/);
-    })
+    });
+
 })

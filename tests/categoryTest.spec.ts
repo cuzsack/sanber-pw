@@ -30,5 +30,9 @@ test.describe('Login and Add Category', () => {
       fullPage: true,
     });
   });
-  
+
+  test.afterEach(async ({ page }) => {
+     await page.close();
+  });  
+
 });

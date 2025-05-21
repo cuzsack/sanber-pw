@@ -23,7 +23,7 @@ export class CategoryPage {
     await this.inputNamaCategory.fill(name || '');
     await this.inputDeskripsiCategory.fill(description || '');
     await this.simpanCategory.click();
-    await this.page.waitForTimeout(2000); 
+    await this.page.waitForTimeout(3000); 
   }
 }
 

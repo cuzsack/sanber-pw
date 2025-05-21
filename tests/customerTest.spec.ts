@@ -30,5 +30,9 @@ test.describe('Login and Add Customer', () => {
       fullPage: true,
     });
   });
+
+  test.afterEach(async ({ page }) => {
+     await page.close();
+  });
   
 });

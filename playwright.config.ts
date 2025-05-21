@@ -29,12 +29,13 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+  video: {
+    mode: 'on',             // 'on', 'retain-on-failure', etc.
+  },
 
-        video:'off',
-    viewport: { width: 1280, height: 720 },
-
-    headless: false, // Headed mode globally
+  viewport: { width: 1280, height: 720 },
+  headless: false,
+  trace: 'on', // Headed mode globally
     
   },
 
@@ -42,18 +43,21 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        browserName: 'chromium',
+        channel: 'chrome',
+      },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
